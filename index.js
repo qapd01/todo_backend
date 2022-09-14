@@ -4,6 +4,15 @@ const config = require('./config.js')
 
 const app = express();
 const PORT = 8080
+const todoRouter = require('./src/api/todo/todo.route')
+
+app.use('/', todoRouter)
+
+// app.get('/', (req,res)=> {
+//     console.log("hello world")
+//     res.send("Hi")
+// })
+
 
 const connect = async () => {
     try {
@@ -22,10 +31,6 @@ mongoose.connection.on("connected", () => {
     console.log("MongoDB connected");
 });
 
-app.get('/', (req,res)=> {
-    console.log("hello world")
-    res.send("Hi")
-})
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`)
