@@ -5,9 +5,11 @@ require("dotenv").config();
 
 const app = express();
 const PORT = 8080
+const cors = require('cors')
 const todoRouter = require('./src/api/todo/todo.route')
 
 //Middleware
+app.use(cors)
 app.use(express.urlencoded());  
 app.use(express.json()); 
 
