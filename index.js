@@ -9,7 +9,7 @@ const cors = require('cors')
 const todoRouter = require('./src/api/todo/todo.route')
 
 //Middleware
-app.use(cors)
+app.use(cors())
 app.use(express.urlencoded());  
 app.use(express.json()); 
 
