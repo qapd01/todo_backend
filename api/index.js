@@ -1,9 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const config = require('../config.js')
+const config = require('../config')
 const dotenv = require('dotenv')
-const cors = require('cors')
-const todoRouter = require('./src/api/todo/todo.route')
+const cors = require('cors');
+const todoRouter = require('../src/api/todo/todo.route')
 
 const app = express();
 dotenv.config();

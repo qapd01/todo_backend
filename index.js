@@ -1,22 +1,10 @@
-// const express = require("express");
+
 const mongoose = require("mongoose");
-// const config = require("./config.js");
+const config = require('./config')
 const app = require('./api/index')
-// require("dotenv").config();
-
-// const app = express();
-// const PORT = 8080
-// const cors = require('cors')
-// const todoRouter = require('./src/api/todo/todo.route.js')
-
-//Middleware
-// app.use(cors())
-// app.use(express.urlencoded());  
-// app.use(express.json()); 
-
-// app.use('/api/todo', todoRouter)
 
 
+const PORT = require('./config')
 
 
 const connect = async () => {
