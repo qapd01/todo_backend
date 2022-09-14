@@ -7,12 +7,13 @@ const app = express();
 const PORT = 8080
 const todoRouter = require('./src/api/todo/todo.route')
 
+//Middleware
+app.use(express.urlencoded());  
+app.use(express.json()); 
+
 app.use('/', todoRouter)
 
-// app.get('/', (req,res)=> {
-//     console.log("hello world")
-//     res.send("Hi")
-// })
+
 
 
 const connect = async () => {
