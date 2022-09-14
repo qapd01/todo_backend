@@ -1,6 +1,7 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const config = require('./config.js')
+const express = require("express");
+const mongoose = require("mongoose");
+const config = require("./config.js");
+require("dotenv").config();
 
 const app = express();
 const PORT = 8080
@@ -15,25 +16,25 @@ app.use('/', todoRouter)
 
 
 const connect = async () => {
-    try {
-        await mongoose.connect(config.mongo);
-        console.log("Connected to MongoDB");
-    } catch (error) {
-        throw error;
-    }
+  try {
+    await mongoose.connect(config.mongo);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    throw error;
+  }
 };
 
 mongoose.connection.on("disconnected", () => {
-    console.log("Disconnected from MongoDB");
+  console.log("Disconnected from MongoDB");
 });
 
 mongoose.connection.on("connected", () => {
-    console.log("MongoDB connected");
+  console.log("MongoDB connected");
 });
 
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`)
-})
+  console.log(`Server is listening on port ${PORT}`);
+});
 
 connect();
