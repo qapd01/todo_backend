@@ -1,9 +1,8 @@
-const express = require('express')
 const mongoose = require('mongoose')
 const config = require('./config.js')
+const app = require('./api/index.js')
 
-const app = express();
-const PORT = 8080
+const PORT = config.port || 8080;
 
 const connect = async () => {
     try {
