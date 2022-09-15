@@ -10,6 +10,9 @@ const TodoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    isDone: {
+      type : Boolean,
+    }
   },
   { timestamps: true }
 );
