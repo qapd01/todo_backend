@@ -12,6 +12,7 @@ const TodoSchema = new mongoose.Schema(
     },
     isDone: {
       type : Boolean,
+      default: false
     }
   },
   { timestamps: true }
